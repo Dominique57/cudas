@@ -11,11 +11,11 @@ constexpr double REF_PI = 3.1415926535897932384626433832795028841971693993751058
 template<typename IPI>
 static void execute(IPI& computer) {
     double pi = computer.compute();
-    double delta = REF_PI - pi;
-    std::cout << std::setprecision(1000)
-     << "Ref Pi: " << pi << '\n'
-     << "Our Pi: " << REF_PI << '\n'
-     << "Delta : " << delta << '\n';
+    double delta = std::abs(REF_PI - pi);
+    std::cout << std::fixed << std::showpoint << std::setprecision(60)
+        << "Ref Pi: " << pi << '\n'
+        << "Our Pi: " << REF_PI << '\n'
+        << "Delta : " << delta << '\n';
 }
 
 void executeCpu(int iter) {

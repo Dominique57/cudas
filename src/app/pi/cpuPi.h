@@ -2,12 +2,12 @@
 
 class CpuPi {
   public:
-    CpuPi(int iter)
+    CpuPi(unsigned long long iter)
       : _iter(iter)
     {}
 
     double compute();
 
   protected:
-    int _iter;
+    unsigned long long _iter;
 };

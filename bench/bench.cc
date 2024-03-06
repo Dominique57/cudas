@@ -23,10 +23,12 @@ void BM_gpu_1M_iter(benchmark::State& st) {
 }
 
 BENCHMARK(BM_cpu_1M_iter)
+    ->Iterations(100)
     ->Unit(benchmark::kMillisecond)
     ->UseRealTime();
 
 BENCHMARK(BM_gpu_1M_iter)
+    ->Iterations(100)
     ->Unit(benchmark::kMillisecond)
     ->UseRealTime();
 

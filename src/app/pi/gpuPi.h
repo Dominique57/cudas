@@ -4,12 +4,12 @@
 
 class GpuPi {
   public:
-    CUDA_HOSTDEV GpuPi(int iter)
+    CUDA_HOSTDEV GpuPi(unsigned long long iter)
       : _iter(iter)
     {}
 
-    CUDA_HOSTDEV double compute();
+    CUDA_HOST double compute();
 
   protected:
-    int _iter;
+    unsigned long long _iter;
 };

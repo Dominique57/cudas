@@ -9,6 +9,7 @@ namespace po = boost::program_options;
 
 constexpr auto GPU_STR = "GPU";
 constexpr auto CPU_STR = "GPU";
+constexpr auto ITER = 100'000'000;
 
 po::options_description define_options()
 {
@@ -19,7 +20,7 @@ po::options_description define_options()
         ("exec,e", po::value<std::string>(),
          "Either CPU or GPU");
     desc.add_options()
-        ("iter,i", po::value<unsigned long long>()->default_value(1'000'000),
+        ("iter,i", po::value<unsigned long long>()->default_value(ITER),
          "Number of iterations for pi computation");
     desc.add_options()
         ("test,t", "Compare CPU and GPU implementations for safety checks");
